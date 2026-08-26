@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "proofId": "release-2026-08-26",
+  "evaluationTime": "2026-08-26T05:00:00.000Z",
+  "artifact": {
+    "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "buildRevisionSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "buildReceiptSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "provenanceSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "policy": {
+    "maxEvidenceAgeMs": 86400000,
+    "stages": [
+      { "stageIdHash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "environmentHash": "1111111111111111111111111111111111111111111111111111111111111111", "requiredGateTypes": ["build-integrity"], "minDistinctAuthorities": 1 },
+      { "stageIdHash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "environmentHash": "2222222222222222222222222222222222222222222222222222222222222222", "requiredGateTypes": ["integration-test", "security-scan"], "minDistinctAuthorities": 2 },
+      { "stageIdHash": "0000000000000000000000000000000000000000000000000000000000000000", "environmentHash": "3333333333333333333333333333333333333333333333333333333333333333", "requiredGateTypes": ["change-approval", "production-readiness"], "minDistinctAuthorities": 2 }
+    ]
+  },
+  "records": [
+    {
+      "sequence": 1,
+      "recordIdHash": "4444444444444444444444444444444444444444444444444444444444444444",
+      "stageIdHash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "environmentHash": "1111111111111111111111111111111111111111111111111111111111111111",
+      "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "deploymentReceiptSha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "previousDeploymentReceiptSha256": null,
+      "promotedAt": "2026-08-26T02:00:00.000Z",
+      "status": "promoted",
+      "gates": [
+        { "type": "build-integrity", "gateIdHash": "1010101010101010101010101010101010101010101010101010101010101010", "authorityHash": "5151515151515151515151515151515151515151515151515151515151515151", "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "status": "passed", "observedAt": "2026-08-26T01:50:00.000Z" }
+      ]
+    },
+    {
+      "sequence": 2,
+      "recordIdHash": "5555555555555555555555555555555555555555555555555555555555555555",
+      "stageIdHash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "environmentHash": "2222222222222222222222222222222222222222222222222222222222222222",
+      "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "deploymentReceiptSha256": "7777777777777777777777777777777777777777777777777777777777777777",
+      "previousDeploymentReceiptSha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "promotedAt": "2026-08-26T03:00:00.000Z",
+      "status": "promoted",
+      "gates": [
+        { "type": "integration-test", "gateIdHash": "2020202020202020202020202020202020202020202020202020202020202020", "authorityHash": "5252525252525252525252525252525252525252525252525252525252525252", "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "status": "passed", "observedAt": "2026-08-26T02:40:00.000Z" },
+        { "type": "security-scan", "gateIdHash": "3030303030303030303030303030303030303030303030303030303030303030", "authorityHash": "5353535353535353535353535353535353535353535353535353535353535353", "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "status": "passed", "observedAt": "2026-08-26T02:45:00.000Z" }
+      ]
+    },
+    {
+      "sequence": 3,
+      "recordIdHash": "9999999999999999999999999999999999999999999999999999999999999999",
+      "stageIdHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "environmentHash": "3333333333333333333333333333333333333333333333333333333333333333",
+      "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "deploymentReceiptSha256": "8888888888888888888888888888888888888888888888888888888888888888",
+      "previousDeploymentReceiptSha256": "7777777777777777777777777777777777777777777777777777777777777777",
+      "promotedAt": "2026-08-26T04:00:00.000Z",
+      "status": "promoted",
+      "gates": [
+        { "type": "change-approval", "gateIdHash": "4040404040404040404040404040404040404040404040404040404040404040", "authorityHash": "5454545454545454545454545454545454545454545454545454545454545454", "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "status": "passed", "observedAt": "2026-08-26T03:40:00.000Z" },
+        { "type": "production-readiness", "gateIdHash": "5050505050505050505050505050505050505050505050505050505050505050", "authorityHash": "5656565656565656565656565656565656565656565656565656565656565656", "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "status": "passed", "observedAt": "2026-08-26T03:45:00.000Z" }
+      ]
+    }
+  ]
+}

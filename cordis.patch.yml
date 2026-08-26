@@ -1,0 +1,5 @@
+- insert:
+    - id: dsh-artifact-promotion-proof
+      name: dsh-artifact-promotion-proof
+      config:
+        workspaceRoot: .

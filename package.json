@@ -1,0 +1,22 @@
+{
+  "name": "dsh-artifact-promotion-proof",
+  "version": "0.1.0",
+  "description": "Offline content-addressed proof that one immutable artifact followed a declared promotion chain",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.js",
+  "exports": { ".": "./index.js", "./proof": "./lib/artifact-promotion-proof.mjs" },
+  "bin": { "dsh-artifact-promotion-proof": "./bin/dsh-artifact-promotion-proof.mjs" },
+  "files": [".codex-plugin/", ".mcp.json", "bin/", "cordis.patch.yml", "examples/", "index.js", "lib/", "mcp-server.mjs", "LICENSE", "README.md", "README.zh-CN.md", "SECURITY.md"],
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "smoke:plugin": "node test/plugin-smoke.mjs",
+    "smoke:mcp": "node test/mcp-smoke.mjs",
+    "smoke:dsh": "node test/dsh-runtime-smoke.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "git+https://github.com/dongsheng123132/dsh-artifact-promotion-proof.git" },
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "artifact-promotion", "supply-chain", "evidence"]
+}

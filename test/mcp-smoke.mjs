@@ -1,0 +1,7 @@
+import assert from 'node:assert/strict'
+import { spawn } from 'node:child_process'
+import { readFile } from 'node:fs/promises'
+const child = spawn(process.execPath, ['mcp-server.mjs'], { cwd: new URL('..', import.meta.url), stdio: ['pipe', 'pipe', 'pipe'], shell: false })
+let buffer = ''; const pending = new Map(); child.stdout.setEncoding('utf8'); child.stdout.on('data', chunk => { buffer += chunk; let cut; while ((cut = buffer.indexOf('\n')) >= 0) { const line = buffer.slice(0, cut); buffer = buffer.slice(cut + 1); if (!line) continue; const row = JSON.parse(line); pending.get(row.id)?.(row) } })
+const call = request => new Promise((resolve, reject) => { const timer = setTimeout(() => reject(new Error('MCP timeout')), 5000); pending.set(request.id, row => { clearTimeout(timer); resolve(row) }); child.stdin.write(`${JSON.stringify(request)}\n`) })
+try { assert.equal((await call({ jsonrpc: '2.0', id: 1, method: 'initialize', params: {} })).result.serverInfo.name, 'dsh-artifact-promotion-proof'); const listed = await call({ jsonrpc: '2.0', id: 2, method: 'tools/list', params: {} }); assert.equal(listed.result.tools.length, 2); const manifestJson = await readFile(new URL('../examples/promoted.json', import.meta.url), 'utf8'); const verified = await call({ jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'artifact_promotion_verify', arguments: { manifestJson } } }); assert.equal(verified.result.structuredContent.verdict, 'promoted'); process.stdout.write('mcp smoke passed: initialize, list, call\n') } finally { child.kill() }
