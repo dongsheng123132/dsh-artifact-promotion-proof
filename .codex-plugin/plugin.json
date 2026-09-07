@@ -1,19 +1,31 @@
 {
   "name": "dsh-artifact-promotion-proof",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Offline proof that one immutable artifact followed a declared promotion chain",
-  "author": { "name": "dongsheng123132" },
+  "author": {
+    "name": "dongsheng123132"
+  },
   "homepage": "https://github.com/dongsheng123132/dsh-artifact-promotion-proof",
   "repository": "https://github.com/dongsheng123132/dsh-artifact-promotion-proof",
   "license": "MIT",
-  "keywords": ["deepseek-harness", "dsh", "artifact-promotion", "supply-chain", "evidence"],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "artifact-promotion",
+    "supply-chain",
+    "evidence"
+  ],
   "interface": {
     "displayName": "DSH Artifact Promotion Proof",
     "shortDescription": "Verify an immutable artifact promotion chain.",
     "longDescription": "Checks hash-only build, staging and production promotion receipts for digest continuity, ordered stages and required gates without deploying anything.",
     "developerName": "dongsheng123132",
     "category": "Developer Tools",
-    "capabilities": ["MCP tools", "DSH tools", "offline verification"],
+    "capabilities": [
+      "MCP tools",
+      "DSH tools",
+      "offline verification"
+    ],
     "defaultPrompt": "Verify this explicit artifact-promotion manifest and return only hash-based evidence."
   },
   "mcpServers": "./.mcp.json"
