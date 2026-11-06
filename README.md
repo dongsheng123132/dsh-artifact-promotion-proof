@@ -1,5 +1,7 @@
 # DSH Artifact Promotion Proof
 
+**Maintainer / Author：贺去病 (He Fangsheng / Dosen) · [hequbing.com](https://www.hequbing.com)**
+
 An offline, deterministic evidence layer for DeepSeek Harness supply chains. It checks whether one explicit artifact digest followed a declared build → staging → production chain with the exact environment bindings, predecessor receipts and gate evidence required at every stage.
 
 It **does not deploy** anything, call a registry, grant approval, verify runtime health, or mutate an environment. It also **does not authenticate** receipts or verify provenance signatures. A `promoted` verdict means only that the supplied hash-only records are internally complete, ordered and policy-conformant.

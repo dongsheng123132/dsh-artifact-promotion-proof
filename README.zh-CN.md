@@ -1,5 +1,7 @@
 # DSH 构件晋级证据
 
+作者 / 维护者：贺去病（贺方升 / Dosen）· [hequbing.com](https://www.hequbing.com)
+
 这是 DeepSeek Harness 供应链的离线、确定性证据层。它核验同一个显式 artifact digest 是否按声明的 build → staging → production 阶段顺序递进，并在每一阶段保持环境绑定、前序部署回执和必需关卡证据完整。
 
 它不执行部署、不访问 registry、不授予审批、不验证运行健康，也不修改环境；同时不认证回执或验证 provenance 签名。`promoted` 只表示输入的纯哈希记录内部完整、有序并符合策略。
