@@ -1,6 +1,6 @@
 # DSH Artifact Promotion Proof
 
-**Maintainer / Author：贺去病 (He Fangsheng / Dosen) · [hequbing.com](https://www.hequbing.com)**
+**Maintainer / Author：He Fangsheng (贺方升 / 贺去病; Dosen) · [hequbing.com](https://www.hequbing.com)**
 
 An offline, deterministic evidence layer for DeepSeek Harness supply chains. It checks whether one explicit artifact digest followed a declared build → staging → production chain with the exact environment bindings, predecessor receipts and gate evidence required at every stage.
 
